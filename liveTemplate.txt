@@ -1,0 +1,137 @@
+<template name="@" value="{@literal $char$}" description="Javadoc中插入 {@literal } 列表" toReformat="true" toShortenFQNames="true">
+  <variable name="char" expression="" defaultValue="&quot;@&quot;" alwaysStopAt="true" />
+  <context>
+    <option name="JAVA_COMMENT" value="true" />
+  </context>
+</template>
+<template name="ae" value="assertEquals(&quot;$exp$&quot;, $run$);" description="插入 assertEquals()" toReformat="true" toShortenFQNames="true">
+  <variable name="exp" expression="" defaultValue="&quot;预期值&quot;" alwaysStopAt="true" />
+  <variable name="run" expression="" defaultValue="&quot;运行值&quot;" alwaysStopAt="true" />
+  <context>
+    <option name="JAVA_STATEMENT" value="true" />
+  </context>
+</template>
+<template name="br" value="&lt;br/&gt;" description="Javadoc中插入 &lt;br/&gt;" toReformat="true" toShortenFQNames="true">
+  <context>
+    <option name="JAVA_COMMENT" value="true" />
+  </context>
+</template>
+<template name="cc" value="/**&#10; * $class$&#10; * &lt;p&gt;&#10; * $desc$&#10; *&#10; * @author $author$&#10; * @version 1.0&#10; * @since $date$&#10; */" description="类注释" toReformat="true" toShortenFQNames="true">
+  <variable name="class" expression="className()" defaultValue="&quot;类简要说明&quot;" alwaysStopAt="true" />
+  <variable name="desc" expression="" defaultValue="&quot;类详细说明&quot;" alwaysStopAt="true" />
+  <variable name="author" expression="user()" defaultValue="" alwaysStopAt="true" />
+  <variable name="date" expression="date()" defaultValue="" alwaysStopAt="true" />
+  <context>
+    <option name="JAVA_COMMENT" value="true" />
+    <option name="JAVA_DECLARATION" value="true" />
+  </context>
+</template>
+<template name="code" value="&lt;pre&gt;{@code&#10;* $END$&#10;* }&lt;/pre&gt;" description="Javadoc中插入 code 代码片段" toReformat="true" toShortenFQNames="true">
+  <context>
+    <option name="JAVA_COMMENT" value="true" />
+  </context>
+</template>
+<template name="for" value="for ($type$ $var$: $list$) {&#10;    $END$&#10;}" description="插入for循环" toReformat="true" toShortenFQNames="true">
+  <variable name="type" expression="" defaultValue="&quot;类型&quot;" alwaysStopAt="true" />
+  <variable name="var" expression="" defaultValue="&quot;item&quot;" alwaysStopAt="true" />
+  <variable name="list" expression="" defaultValue="&quot;集合对象&quot;" alwaysStopAt="true" />
+  <context>
+    <option name="JAVA_STATEMENT" value="true" />
+  </context>
+</template>
+<template name="gwt" value="// @given $g$&#10;// @when $w$&#10;// @then $t$" description="插入 given when then" toReformat="true" toShortenFQNames="true">
+  <variable name="g" expression="" defaultValue="&quot;前提条件&quot;" alwaysStopAt="true" />
+  <variable name="w" expression="" defaultValue="&quot;执行操作&quot;" alwaysStopAt="true" />
+  <variable name="t" expression="" defaultValue="&quot;预期结果&quot;" alwaysStopAt="true" />
+  <context>
+    <option name="JAVA_COMMENT" value="true" />
+    <option name="JAVA_DECLARATION" value="true" />
+    <option name="JAVA_STATEMENT" value="true" />
+  </context>
+</template>
+<template name="li" value="&lt;li&gt;$a$&lt;/li&gt;" description="Javadoc中插入 li 列表" toReformat="true" toShortenFQNames="true">
+  <variable name="a" expression="" defaultValue="" alwaysStopAt="true" />
+  <context>
+    <option name="JAVA_COMMENT" value="true" />
+  </context>
+</template>
+<template name="link" value="{@link $link$}" description="Javadoc中插入 link" toReformat="true" toShortenFQNames="true">
+  <variable name="link" expression="" defaultValue="" alwaysStopAt="true" />
+  <context>
+    <option name="JAVA_COMMENT" value="true" />
+  </context>
+</template>
+<template name="logger" value="private static final Logger logger = LoggerFactory.getLogger($class$.class);" description="插入 logger 变量" toReformat="true" toShortenFQNames="true">
+  <variable name="class" expression="className() + ”.Class&quot;" defaultValue="" alwaysStopAt="true" />
+  <context>
+    <option name="JAVA_DECLARATION" value="true" />
+    <option name="JAVA_STATEMENT" value="true" />
+  </context>
+</template>
+<template name="ls" value="List&lt;String&gt; $name$ = new ArrayList&lt;&gt;();" description="插入 List&lt;String&gt; 变量定义" toReformat="true" toShortenFQNames="true">
+  <variable name="name" expression="" defaultValue="&quot;list&quot;" alwaysStopAt="true" />
+  <context>
+    <option name="JAVA_STATEMENT" value="true" />
+  </context>
+</template>
+<template name="map" value="Map&lt;String, $var$&gt; ms = new HashMap&lt;&gt;();" description="插入 Map&lt;String, Object&gt; 变量定义" toReformat="true" toShortenFQNames="true">
+  <variable name="var" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+  <context>
+    <option name="JAVA_STATEMENT" value="true" />
+  </context>
+</template>
+<template name="psfl" value="public static final long " description="插入 public static final long" toReformat="false" toShortenFQNames="true">
+  <context>
+    <option name="JAVA_DECLARATION" value="true" />
+  </context>
+</template>
+<template name="psm" value="public static $ret$ $m$($para$){&#10;    $END$&#10;}" description="插入静态方法定义" toReformat="true" toShortenFQNames="true">
+  <variable name="ret" expression="" defaultValue="&quot;返回类型&quot;" alwaysStopAt="true" />
+  <variable name="m" expression="" defaultValue="&quot;方法名&quot;" alwaysStopAt="true" />
+  <variable name="para" expression="" defaultValue="&quot;参数&quot;" alwaysStopAt="true" />
+  <context>
+    <option name="JAVA_DECLARATION" value="true" />
+  </context>
+</template>
+<template name="psv" value="public static void $m$($para$){&#10;    $END$&#10;}" description="插入静态void方法定义" toReformat="true" toShortenFQNames="true">
+  <variable name="m" expression="" defaultValue="&quot;方法名&quot;" alwaysStopAt="true" />
+  <variable name="para" expression="" defaultValue="&quot;参数&quot;" alwaysStopAt="true" />
+  <context>
+    <option name="JAVA_DECLARATION" value="true" />
+  </context>
+</template>
+<template name="tc" value="try {&#10;    $END$&#10;} catch ($Exception$ e) {&#10;    e.printStackTrace();&#10;}&#10;" description="插入 try catch 语句" toReformat="false" toShortenFQNames="true">
+  <variable name="Exception" expression="" defaultValue="&quot;Exception&quot;" alwaysStopAt="true" />
+  <context>
+    <option name="JAVA_STATEMENT" value="true" />
+  </context>
+</template>
+<template name="tcf" value="try {&#10;    $END$&#10;} catch ($Exception$ e) {&#10;    e.printStackTrace();&#10;} finally {&#10;    &#10;}&#10;" description="插入 try catch finally 语句" toReformat="false" toShortenFQNames="true">
+  <variable name="Exception" expression="" defaultValue="&quot;Exception&quot;" alwaysStopAt="true" />
+  <context>
+    <option name="JAVA_STATEMENT" value="true" />
+  </context>
+</template>
+<template name="test" value="/**&#10; * $method$ 测试用例&#10; *&#10; * @given $given$&#10; * @when $when$&#10; * @then $then$&#10; */&#10;@Test&#10;public void test$Method$() {&#10;    $END$&#10;}&#10;&#10;" description="插入测试方法" toReformat="true" toShortenFQNames="true">
+  <variable name="method" expression="" defaultValue="&quot;方法名&quot;" alwaysStopAt="true" />
+  <variable name="given" expression="" defaultValue="&quot;给定条件&quot;" alwaysStopAt="true" />
+  <variable name="when" expression="" defaultValue="&quot;当执行操作&quot;" alwaysStopAt="true" />
+  <variable name="then" expression="" defaultValue="&quot;预期&quot;" alwaysStopAt="true" />
+  <variable name="Method" expression="capitalize(method)" defaultValue="&quot;方法名&quot;" alwaysStopAt="false" />
+  <context>
+    <option name="JAVA_DECLARATION" value="true" />
+  </context>
+</template>
+<template name="tf" value="try {&#10;    $END$&#10;} finally {&#10;    &#10;}&#10;" description="插入 try finally 语句" toReformat="false" toShortenFQNames="true">
+  <context>
+    <option name="JAVA_STATEMENT" value="true" />
+  </context>
+</template>
+<template name="ul" value="&lt;ul&gt;&#10;*     &lt;li&gt;$a$&lt;/li&gt;&#10;*     &lt;li&gt;$b$&lt;/li&gt;&#10;*     &lt;li&gt;$c$&lt;/li&gt;&#10;* &lt;/ul&gt;" description="Javadoc中插入 ul 列表" toReformat="true" toShortenFQNames="true">
+  <variable name="a" expression="" defaultValue="" alwaysStopAt="true" />
+  <variable name="b" expression="" defaultValue="" alwaysStopAt="true" />
+  <variable name="c" expression="" defaultValue="" alwaysStopAt="true" />
+  <context>
+    <option name="JAVA_COMMENT" value="true" />
+  </context>
+</template>
