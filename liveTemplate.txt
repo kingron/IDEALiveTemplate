@@ -49,6 +49,18 @@
     <option name="JAVA_STATEMENT" value="true" />
   </context>
 </template>
+<template name="ifn" value="if (null == $obj$) {&#10;    $END$&#10;}" description="插入 if (null == object)" toReformat="true" toShortenFQNames="true">
+  <variable name="obj" expression="" defaultValue="" alwaysStopAt="true" />
+  <context>
+    <option name="JAVA_STATEMENT" value="true" />
+  </context>
+</template>
+<template name="jojo" value="JSONObject.toJSONString($VAR$);" description="对象转JSON字符串" toReformat="true" toShortenFQNames="true">
+  <variable name="VAR" expression="suggestFirstVariableName(“Object”)" defaultValue="" alwaysStopAt="true" />
+  <context>
+    <option name="JAVA_STATEMENT" value="true" />
+  </context>
+</template>
 <template name="li" value="&lt;li&gt;$a$&lt;/li&gt;" description="Javadoc中插入 li 列表" toReformat="true" toShortenFQNames="true">
   <variable name="a" expression="" defaultValue="" alwaysStopAt="true" />
   <context>
@@ -61,10 +73,46 @@
     <option name="JAVA_COMMENT" value="true" />
   </context>
 </template>
+<template name="logd" value="log.debug(&quot;$class$.$method$($param$): $msg$&quot;);" description="插入 log.debug()" toReformat="true" toShortenFQNames="true">
+  <variable name="class" expression="className()" defaultValue="" alwaysStopAt="true" />
+  <variable name="method" expression="methodName()" defaultValue="" alwaysStopAt="true" />
+  <variable name="param" expression="methodParameters()" defaultValue="" alwaysStopAt="true" />
+  <variable name="msg" expression="" defaultValue="" alwaysStopAt="true" />
+  <context>
+    <option name="JAVA_STATEMENT" value="true" />
+  </context>
+</template>
+<template name="loge" value="log.error(&quot;$class$.$method$($param$): $msg$&quot;);" description="插入 log.error()" toReformat="true" toShortenFQNames="true">
+  <variable name="class" expression="className()" defaultValue="" alwaysStopAt="true" />
+  <variable name="method" expression="methodName()" defaultValue="" alwaysStopAt="true" />
+  <variable name="param" expression="methodParameters()" defaultValue="" alwaysStopAt="true" />
+  <variable name="msg" expression="" defaultValue="" alwaysStopAt="true" />
+  <context>
+    <option name="JAVA_STATEMENT" value="true" />
+  </context>
+</template>
 <template name="logger" value="private static final Logger logger = LoggerFactory.getLogger($class$.class);" description="插入 logger 变量" toReformat="true" toShortenFQNames="true">
   <variable name="class" expression="className() + ”.Class&quot;" defaultValue="" alwaysStopAt="true" />
   <context>
     <option name="JAVA_DECLARATION" value="true" />
+    <option name="JAVA_STATEMENT" value="true" />
+  </context>
+</template>
+<template name="logi" value="log.info(&quot;$class$.$method$($param$): $msg$&quot;);" description="插入 log.info()" toReformat="true" toShortenFQNames="true">
+  <variable name="class" expression="className()" defaultValue="" alwaysStopAt="true" />
+  <variable name="method" expression="methodName()" defaultValue="" alwaysStopAt="true" />
+  <variable name="param" expression="methodParameters()" defaultValue="" alwaysStopAt="true" />
+  <variable name="msg" expression="" defaultValue="&quot;日志&quot;" alwaysStopAt="true" />
+  <context>
+    <option name="JAVA_STATEMENT" value="true" />
+  </context>
+</template>
+<template name="logw" value="log.warn(&quot;$class$.$method$($param$): $msg$&quot;);" description="插入 log.warn()" toReformat="true" toShortenFQNames="true">
+  <variable name="class" expression="className()" defaultValue="" alwaysStopAt="true" />
+  <variable name="method" expression="methodName()" defaultValue="" alwaysStopAt="true" />
+  <variable name="param" expression="methodParameters()" defaultValue="" alwaysStopAt="true" />
+  <variable name="msg" expression="" defaultValue="" alwaysStopAt="true" />
+  <context>
     <option name="JAVA_STATEMENT" value="true" />
   </context>
 </template>
